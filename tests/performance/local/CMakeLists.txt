@@ -18,6 +18,7 @@ set(benchmarks
     parent_vs_child_stealing
     print_heterogeneous_payloads
     skynet
+    skynet_bare
     timed_task_spawn
     wait_all_timings
 )
@@ -75,6 +76,7 @@ set(hpx_homogeneous_timed_task_spawn_executors_FLAGS DEPENDENCIES iostreams_comp
 set(hpx_heterogeneous_timed_task_spawn_FLAGS DEPENDENCIES iostreams_component)
 set(parent_vs_child_stealing_FLAGS DEPENDENCIES iostreams_component)
 set(skynet_FLAGS DEPENDENCIES iostreams_component)
+set(skynet_bare_FLAGS DEPENDENCIES iostreams_component)
 set(wait_all_timings_FLAGS DEPENDENCIES iostreams_component)
 
 set(delay_baseline_FLAGS NOLIBS
