@@ -19,13 +19,13 @@ void skynet_bare(channel_t& c, std::int64_t num, std::int64_t size, std::int64_t
     if (size != 1)
     {
 		channel_t rc;
-		for (std::size_t i = 0; i < div; ++i) 
+		for (std::int64_t i = 0; i < div; ++i) 
 		{
 			auto sub_num = num + i * size / div;
 			hpx::thread{ [&rc, sub_num, size, div]() { skynet_bare(rc, sub_num, size / div, div); } }.detach();
 		}
 		std::int64_t sum{ 0 };
-		for (std::size_t i = 0; i < div; ++i) 
+		for (std::int64_t i = 0; i < div; ++i) 
 			sum += rc.get().get();
 		c.set(sum);
 	}
